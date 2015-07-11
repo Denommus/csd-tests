@@ -83,7 +83,7 @@ task classCloc << {
     def tree = fileTree('src').include '**/*.java'
     tree.each { File file ->
         def l = lines(file)
-        if(l > 1000) throw new Exception("too many lines on file ${file.getName()}")
+        if(l > 20) throw new Exception("too many lines on file ${file.getName()}")
         println "${file.getName()}: ${lines(file)}"
     }
 }
