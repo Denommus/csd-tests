@@ -5,11 +5,7 @@ import java.util.*;
 public class IdaAoTrabalho extends AcontecimentoBase{
   
   public Integer getModificadorDeHumor(Integer opcao){
-    Integer modificadorDeHumor = 0;
-    /**
-    Dica: é mais fácil isolar a chamada a Math.random em um outro método
-    **/
-    return modificadorDeHumor;
+    return engarrafamentoAconteceu() ? -2 : 1;
   }
 
   public Map<Integer, String> getOpcoes(){
@@ -29,5 +25,13 @@ public class IdaAoTrabalho extends AcontecimentoBase{
 
   public String getResultadoNegativo(){
     return "";
+  }
+
+  public boolean engarrafamentoAconteceu() {
+    return random() < 42;
+  }
+
+  public Double random() {
+    return Math.random() % 100;
   }
 }

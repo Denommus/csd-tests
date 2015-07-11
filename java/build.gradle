@@ -79,6 +79,22 @@ watch {
     }
 }
 
+task classCloc << {
+    def tree = fileTree('src').include '**/*.java'
+    tree.each { File file ->
+        println "${file.getName()}: ${lines(file)}"
+    }
+}
+
+task cloc (type: Exec) {
+    commandLine 'cloc', 'src'
+}
+
+def lines(file) {
+    def lines = 0
+    file.eachLine { lines++ }
+    lines
+}
 
 //Configurações para que o feedback seja bem informativo
 def failedClasses = ""

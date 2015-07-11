@@ -19,12 +19,18 @@ public class CafeDaManhaTests {
 
   @Test
   public void testaModificadorDeHumor() {
-    
+    when(cafe.getHumorAtual()).thenReturn(new Integer(12));
+    assertEquals(new Integer(2), cafe.getModificadorDeHumor(1));
+    assertEquals(new Integer(-2), cafe.getModificadorDeHumor(2));
+
+    when(cafe.getHumorAtual()).thenReturn(new Integer(10));
+    assertEquals(new Integer(2), cafe.getModificadorDeHumor(2));
+    assertEquals(new Integer(-2), cafe.getModificadorDeHumor(1));
   }
 
   @Test
   public void testaNumeroDeOpcoes() {
-    
+    assertEquals(2, cafe.getOpcoes().size());
   }
 
   @Test

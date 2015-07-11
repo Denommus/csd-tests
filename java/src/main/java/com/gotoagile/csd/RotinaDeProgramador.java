@@ -29,6 +29,8 @@ public class RotinaDeProgramador{
   private ArrayList<AcontecimentoBase> getAcontecimentos(){
     ArrayList<AcontecimentoBase> acontecimentos = new ArrayList<AcontecimentoBase>();
     acontecimentos.add(new Despertar());
+    acontecimentos.add(new CafeDaManha());
+    acontecimentos.add(new IdaAoTrabalho());
     return acontecimentos;
   }
 }

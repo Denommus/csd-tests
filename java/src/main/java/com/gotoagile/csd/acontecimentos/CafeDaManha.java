@@ -5,15 +5,19 @@ import java.util.*;
 public class CafeDaManha extends AcontecimentoBase{
   
   public Integer getModificadorDeHumor(Integer opcao){
-    Integer modificadorDeHumor = 0;
-    /**
-    Você pode utilizar o método getHumorAtual() da classe AcontecimentoBase nesse trecho.
-    **/
-    return modificadorDeHumor;
+    Integer humorAtual = getHumorAtual();
+    if(opcao==1) {
+        return humorAtual <= 10 ? (-2) : 2;
+    }
+    else {
+        return humorAtual <= 10 ? 2 : (-2);
+    }
   }
 
   public Map<Integer, String> getOpcoes(){
     HashMap<Integer, String> opcoes = new HashMap<Integer, String>();
+    opcoes.put(new Integer(1), "café light");
+    opcoes.put(new Integer(2), "café americano");
     return opcoes;
   }
 
